@@ -18,7 +18,7 @@ namespace SchoolWpf.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MsSqlLocalDb;Database=DBTask;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MsSqlLocalDb;Database=DNorbert;Trusted_Connection=true");
         }
 
 

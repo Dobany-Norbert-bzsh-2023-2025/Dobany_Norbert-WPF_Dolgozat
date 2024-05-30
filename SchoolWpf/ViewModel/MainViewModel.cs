@@ -23,9 +23,9 @@ namespace SchoolWpf.ViewModel
 			}
 		}
 
-		Task1View Task1View;
-		Task2View Task2View;
-		Task3View Task3View;
+		Task1View task1View;
+		Task2View task2View;
+		Task3View task3View;
 
         public event PropertyChangedEventHandler? PropertyChanged;		
 
@@ -35,13 +35,13 @@ namespace SchoolWpf.ViewModel
 
         public MainViewModel()
         {
-			Task1View = new Task1View();
-			Task2View = new Task2View();
-			Task3View = new Task3View();
+			task1View = new Task1View();
+			task2View = new Task2View();
+			task3View = new Task3View();
 
-			openTask1 = new RelayCommand(X => CurrentView = Task1View);
-			openTask2 = new RelayCommand(X => CurrentView = Task2View);
-			openTask3 = new RelayCommand(X => CurrentView = Task3View);
+			openTask1 = new RelayCommand(X => CurrentView = task1View);
+			openTask2 = new RelayCommand(X => CurrentView = task2View);
+			openTask3 = new RelayCommand(X => CurrentView = task3View);
 
 
 

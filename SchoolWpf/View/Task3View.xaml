@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:SchoolWpf.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border Background="DarkGray" CornerRadius="20">
+    <Border Background="CornflowerBlue" CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
@@ -19,35 +19,40 @@
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.ColumnSpan="3">
-                <TextBlock  FontSize="24" Text="Task 3" VerticalAlignment="Center"/>
+				<TextBlock  FontSize="24" Text="Task 3" FontWeight="Bold" VerticalAlignment="Center"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
-                <TextBlock Text="Név:" FontSize="20" Padding="0 10 0 0"/>
-                <TextBlock Text="Kor:" FontSize="20" Padding="0 10 0 0"/>
-                <TextBlock Text="Lakóhely:" FontSize="20" Padding="0 10 5 0"/>
-                <TextBlock Text="Munka:" FontSize="20" Padding="0 10 0 0"/>
-                <TextBlock Text="Hobbi:" FontSize="20" Padding="0 10 0 0"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+				<TextBlock Text="Név:" FontSize="20" FontWeight="Bold" Padding="0 0 0 10"/>
+				<TextBlock Text="Kor:" FontSize="20" FontWeight="Bold" Padding="0 0 0 10"/>
+				<TextBlock Text="Lakóhely:" FontSize="20" FontWeight="Bold" Padding="0 0 0 10"/>
+				<TextBlock Text="Munka:" FontSize="20" FontWeight="Bold" Padding="0 0 0 10"/>
+				<TextBlock Text="Hobbi:" FontSize="20" FontWeight="Bold" Padding="0 0 0 10"/>
             </StackPanel>
 
-            <StackPanel x:Name="spInput" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">
-                <TextBox Width="150" Height="40" Text="{Binding Name}"/>
-                <TextBox Width="150" Height="40" Text="{Binding Age}"/>
-                <TextBox Width="150" Height="40" Text="{Binding City}"/>
-                <TextBox Width="150" Height="40" Text="{Binding Occupation}"/>
-                <TextBox Width="150" Height="40" Text="{Binding Hobbies}"/>
+            <StackPanel x:Name="spInput" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center">
+				<TextBox Text="{Binding Name}" Width="150" Height="30" Margin="0 0 0 10" Background="LightBlue"/>
+				<TextBox Text="{Binding Age}" Width="150" Height="30" Margin="0 0 0 10" Background="LightBlue"/>
+				<TextBox Text="{Binding City}" Width="150" Height="30" Margin="0 0 0 10" Background="LightBlue"/>
+				<TextBox Text="{Binding Occupation}" Width="150" Height="30" Margin="0 0 0 10" Background="LightBlue"/>
+				<TextBox Text="{Binding Hobbies}" Width="150" Height="30" Margin="0 0 0 10" Background="LightBlue"/>
             </StackPanel>
 
-            <ListBox Grid.Row="1" HorizontalAlignment="Center" Width="450" x:Name="lbPeople" Margin="0,0,0,5"
-                 IsSynchronizedWithCurrentItem="True"
-                 ItemsSource="{Binding}">
+            <ListBox x:Name="lbPeople" 
+                     IsSynchronizedWithCurrentItem="True"
+                     ItemsSource="{Binding}"
+				     Grid.Row="1" 
+					 HorizontalAlignment="Center" 
+					 Width="450" 
+					 Margin="0,0,0,5"
+					 Background="LightBlue">
 
             </ListBox>
 
             <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Add" Width="140" FontSize="24" Margin="20" Click="Add_Click"/>
-                <Button Content="Update" Width="140" FontSize="24" Margin="20" Click="Update_Click"/>
-                <Button Content="Delete" Width="140" FontSize="24" Margin="20" Click="Delete_Click"/>
+				<Button Click="Add_Click" Content="Add" Width="140" FontSize="24" FontWeight="Bold" Margin="20" Background="LightBlue"/>
+				<Button Click="Update_Click" Content="Update" Width="140" FontSize="24" Margin="20" FontWeight="Bold" Background="LightBlue"/>
+				<Button Click="Delete_Click" Content="Delete" Width="140" FontSize="24" Margin="20" FontWeight="Bold" Background="LightBlue"/>
             </StackPanel>
         </Grid>
     </Border>

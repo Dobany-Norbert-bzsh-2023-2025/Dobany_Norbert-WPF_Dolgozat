@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace SchoolWpf.Migrations
+namespace Task3Database.Migrations
 {
     public partial class init : Migration
     {

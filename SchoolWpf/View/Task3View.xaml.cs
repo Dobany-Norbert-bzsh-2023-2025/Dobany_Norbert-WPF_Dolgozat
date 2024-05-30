@@ -20,9 +20,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SchoolWpf.View
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class Task3View : UserControl
     {
 
@@ -34,7 +31,6 @@ namespace SchoolWpf.View
             InitializeComponent();
             People = new ObservableCollection<People>();
             context = new Context();
-            Init();
             Refresh();
             lbPeople.ItemsSource = People;
             spInput.DataContext = People;
@@ -51,19 +47,6 @@ namespace SchoolWpf.View
 
         }
 
-        private void Init()
-        {
-            if (!context.People.Any())
-            {
-                var sorok = File.ReadAllLines("7.csv").Skip(1);
-                foreach (var line in sorok)
-                {
-                    context.People.Add(new People(line));
-                }
-                context.SaveChanges();
-            }
-
-        }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
