@@ -6,48 +6,49 @@
              xmlns:local="clr-namespace:SchoolWpf.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-	<Border Background="DarkGray" CornerRadius="20">
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="75"/>
-				<RowDefinition/>
-				<RowDefinition Height="100"/>
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition/>
-				<ColumnDefinition Width="100"/>
-				<ColumnDefinition Width="200"/>
-			</Grid.ColumnDefinitions>
-			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.ColumnSpan="3">
-				<TextBlock  FontSize="24" Text="Task 3" VerticalAlignment="Center"/>
-			</StackPanel>
+    <Border Background="DarkGray" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.ColumnSpan="3">
+                <TextBlock  FontSize="24" Text="Task 3" VerticalAlignment="Center"/>
+            </StackPanel>
 
-			<StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
-				<TextBlock Text="Név:" FontSize="20" Padding="0 10 0 0"/>
-				<TextBlock Text="Kor:" FontSize="20" Padding="0 10 0 0"/>
-				<TextBlock Text="Lakóhely:" FontSize="20" Padding="0 10 5 0"/>
-				<TextBlock Text="Munka:" FontSize="20" Padding="0 10 0 0"/>
-				<TextBlock Text="Hobbi:" FontSize="20" Padding="0 10 0 0"/>
-			</StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
+                <TextBlock Text="Név:" FontSize="20" Padding="0 10 0 0"/>
+                <TextBlock Text="Kor:" FontSize="20" Padding="0 10 0 0"/>
+                <TextBlock Text="Lakóhely:" FontSize="20" Padding="0 10 5 0"/>
+                <TextBlock Text="Munka:" FontSize="20" Padding="0 10 0 0"/>
+                <TextBlock Text="Hobbi:" FontSize="20" Padding="0 10 0 0"/>
+            </StackPanel>
 
-			<StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">
-				<TextBox Width="150" Height="40"/>
-				<TextBox Width="150" Height="40"/>
-				<TextBox Width="150" Height="40"/>
-				<TextBox Width="150" Height="40"/>
-				<TextBox Width="150" Height="40"/>
-			</StackPanel>
-			
-			<ListBox Grid.Row="1" HorizontalAlignment="Center" Width="600" x:Name="lbPeople" Margin="20 0 0 0"
+            <StackPanel x:Name="spInput" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">
+                <TextBox Width="150" Height="40" Text="{Binding Name}"/>
+                <TextBox Width="150" Height="40" Text="{Binding Age}"/>
+                <TextBox Width="150" Height="40" Text="{Binding City}"/>
+                <TextBox Width="150" Height="40" Text="{Binding Occupation}"/>
+                <TextBox Width="150" Height="40" Text="{Binding Hobbies}"/>
+            </StackPanel>
+
+            <ListBox Grid.Row="1" HorizontalAlignment="Center" Width="450" x:Name="lbPeople" Margin="0,0,0,5"
                  IsSynchronizedWithCurrentItem="True"
                  ItemsSource="{Binding}">
 
-			</ListBox>
+            </ListBox>
 
-			<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Content="Update" Width="140" FontSize="24" Margin="20" Click="Update_Click"/>
-				<Button Content="Delete" Width="140" FontSize="24" Margin="20" Click="Delete_Click"/>
-			</StackPanel>
-		</Grid>
-	</Border>
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Add" Width="140" FontSize="24" Margin="20" Click="Add_Click"/>
+                <Button Content="Update" Width="140" FontSize="24" Margin="20" Click="Update_Click"/>
+                <Button Content="Delete" Width="140" FontSize="24" Margin="20" Click="Delete_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>

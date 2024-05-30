@@ -37,6 +37,7 @@ namespace SchoolWpf.View
             Init();
             Refresh();
             lbPeople.ItemsSource = People;
+            spInput.DataContext = People;
         }
 
         private void Refresh()
@@ -54,15 +55,27 @@ namespace SchoolWpf.View
         {
             if (!context.People.Any())
             {
-                var sorok = File.ReadAllLines("Database/7.csv").Skip(1);
+                var sorok = File.ReadAllLines("7.csv").Skip(1);
                 foreach (var line in sorok)
                 {
                     context.People.Add(new People(line));
-
                 }
                 context.SaveChanges();
             }
 
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
+            People user = lbPeople.SelectedItem as People;
+            if (user == null) user = new People();
+            user.Id = 0;
+            context.People.Add(user);
+            context.SaveChanges();
+            Refresh();
+            lbPeople.SelectedItem = user;
+            lbPeople.UpdateLayout();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
