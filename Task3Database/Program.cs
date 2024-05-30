@@ -1,6 +1,6 @@
 ﻿using System;
-using SchoolWpf.Data;
-using SchoolWpf.Models;
+using Task3Database.Data;
+using Task3Database.Models;
 
 namespace Run
 {

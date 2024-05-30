@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolWpf.Models
+namespace Task3Database.Models
 {
     public class People
     {

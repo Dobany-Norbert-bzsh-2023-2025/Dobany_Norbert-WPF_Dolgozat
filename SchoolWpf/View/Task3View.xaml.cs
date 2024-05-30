@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
-using SchoolWpf.Data;
-using SchoolWpf.Models;
+using Task3Database.Data;
+using Task3Database.Models;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 

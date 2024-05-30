@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SchoolWpf.Models;
+using Task3Database.Models;
 
-namespace SchoolWpf.Data
+namespace Task3Database.Data
 {
     public class Context : DbContext
     {
